@@ -67,7 +67,8 @@ img {
 const StyledBanner = styled.div`
     background-image: url(${({ bg }) => bg});
     /* background-image: url(${config.bg}); */
-    height: 230px;
+    height: 230px;    
+    background-position-y: 800px;
 
 `;
 
