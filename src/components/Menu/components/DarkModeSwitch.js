@@ -20,7 +20,7 @@ const StyledSwitch = styled.div`
   
   label:before {
     content: "";
-    background-color: #fafafa;
+    background-color: ${({ theme }) => theme.backgroundBase};         
     border: 1px solid #333333;
     width: 24px;
     height: 24px;
@@ -42,15 +42,15 @@ export default function DarkModeSwitch() {
     return (
         <StyledSwitch>
             <input id="darkmode" type="checkbox" onChange={() => {
-                console.log("state alterado!");
+                // console.log("state alterado!");
                 contexto.toggleMode();
             }} />
             <label
                 htmlFor="darkmode"
                 className="darkmode-switch"
-            >
-                <span>🌙</span>
+            >                
                 <span>☀️</span>
+                <span>🌙</span>
                 
             </label>
         </StyledSwitch>

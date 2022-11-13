@@ -37,7 +37,7 @@ export const StyledTimeline = styled.div`
       overflow-x: scroll;
       scroll-snap-type: proximity;
       ::-webkit-scrollbar {
-        height: 10px;
+        height: 8px;
         border-radius: 10px;
         background-color: ${({ theme }) => theme.backgroundLevel1};
       }

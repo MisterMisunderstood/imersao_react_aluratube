@@ -31,27 +31,8 @@ function HomePage() {
     
                     setPlaylists(novasPlaylists);
                 });
-        }, []);
+        }, []);      
         
-        // React.useEffect(() => {
-        //     supabase.from("video")
-        //     .select("*")
-        //     .then((dados) => {
-        //         console.log(dados.data);
-        //         const newPlaylists = {...playlists};
-        //         dados.data.forEach((video) => {
-        //             if (newPlaylists[video.playlists]) {
-        //                 newPlaylists[video.playlists] = [];
-                        
-
-        //             }
-        //             playlists[video.playlists]?.push(video);
-                    
-        //         })
-        //         setPlaylists(playlists);    
-        //     });
-
-        // },[]);
 
        
 
@@ -79,18 +60,10 @@ function HomePage() {
   
 export default HomePage
 
-// function Menu() {
-//     return (
-//         <div>
-//         Menu
-//         </div>
-//     )
-      
-//}
 
 const StyledHeader = styled.div`
 background-color: ${({ theme }) => theme.backgroundLevel1};
-
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
 
 
 img {
@@ -208,5 +181,5 @@ function Timeline({searchValue, ...propriedades}) {
     )
 }
     
-
+ 
   
