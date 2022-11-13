@@ -17,6 +17,9 @@ export const StyledTimeline = styled.div`
     width: 100%;
     max-width: 210px;
     height: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+    
   }
   section {
     width: 100%;
@@ -32,7 +35,18 @@ export const StyledTimeline = styled.div`
       grid-auto-flow: column;
       grid-auto-columns: minmax(200px,1fr);
       overflow-x: scroll;
-      scroll-snap-type: x mandatory;
+      scroll-snap-type: proximity;
+      ::-webkit-scrollbar {
+        height: 10px;
+        border-radius: 10px;
+        background-color: ${({ theme }) => theme.backgroundLevel1};
+      }
+      ::-webkit-scrollbar-thumb {
+      height: 10px;
+      background-color: ${({ theme }) => theme.borderBase};    
+      border-radius: 10px;       
+      border: 0,5px solid ${({ theme }) => theme.textColorBase}; 
+      }
       a {
         scroll-snap-align: start;
         span {

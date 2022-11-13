@@ -1,5 +1,6 @@
 import { StyledRegisterVideo } from "./styles";
 import React from "react";
+import { createClient } from "@supabase/supabase-js"
 
 //custom hook
 function useForm(propsDoForm){
@@ -33,6 +34,13 @@ function useForm(propsDoForm){
 
 }
 
+const PROJECT_URL = "https://tjdjhdwfqhlcjcqxrwmp.supabase.co";
+const SUP_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqZGpoZHdmcWhsY2pjcXhyd21wIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgyMDA3MDksImV4cCI6MTk4Mzc3NjcwOX0.pVf0Qmzelk0uW53eeLhm5g6vjHbcPj79k41KC6TfBrQ";
+const supabase = createClient(PROJECT_URL, SUP_KEY);
+
+function getThumbnail(url) {
+    return `https://img.youtube.com/vi/${url.split("v=")[1]}/hqdefault.jpg`;
+}
 export default function RegisterVideo(){
     const [formVisivel, setFormVisivel] = React.useState(false);
     const formCadastro = useForm({
@@ -49,8 +57,27 @@ export default function RegisterVideo(){
                 ? (
                     <form onSubmit={(evento) => {
                         evento.preventDefault();
+                        console.log(formCadastro.values);
+                        
+                        //contrato entre front e back-end
+                        supabase.from("playlstdb").insert({
+                            title: formCadastro.values.titulo,
+                            url: formCadastro.values.url,
+                            thumb: getThumbnail(formCadastro.values.url),
+                            playlist: "Variados",
+
+                        })
+                        
+                        .then((oqueveio) => {
+                            console.log(oqueveio);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        })
+
                         setFormVisivel(false);
                         formCadastro.clearForm();
+
                     }}> 
                     <div>
                     <button type="button" className="close-modal" onClick={() => setFormVisivel(false)}>
@@ -71,7 +98,11 @@ export default function RegisterVideo(){
                     <button type="submit">
                         Cadastrar
                     </button>
-                    </div>                    
+                    <div class="box-thumb">
+                        <img src={getThumbnail(formCadastro.values.url)}/>
+                        </div> 
+                    </div> 
+                                      
                 </form>
                 )
             : false }

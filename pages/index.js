@@ -1,18 +1,62 @@
 import React from "react"; 
 import config from "../config.json";
-import styled from "styled-components"
-
+import styled from "styled-components";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
+import { videoService } from "../src/services/videoService";
 
 function HomePage() {
-    const estiloDaHomePage = { 
-        // backgroundColor: "red" 
-    };
-
+    const estiloDaHomePage = { };
+    const service = videoService();
         const [valorDoFiltro, setValorDoFiltro] = React.useState("");
+        const [playlists, setPlaylists] = React.useState({});
+        
+        React.useEffect(() => {
+            console.log("useEffect");
+            service.getAllVideos()
+                .then((dados) => {
+                    console.log(dados.data);
+                    // Forma imutavel
+                    const novasPlaylists = {};
+                    dados.data.forEach((video) => {
+                        if (!novasPlaylists[video.playlist]) {
+                            novasPlaylists[video.playlist] = [];
+                        } 
+                        // novasPlaylists[video.playlist].push(video);
+                        novasPlaylists[video.playlist] = [
+                            video,
+                            ...novasPlaylists[video.playlist],
+                        ];
+                    });
+    
+                    setPlaylists(novasPlaylists);
+                });
+        }, []);
+        
+        // React.useEffect(() => {
+        //     supabase.from("video")
+        //     .select("*")
+        //     .then((dados) => {
+        //         console.log(dados.data);
+        //         const newPlaylists = {...playlists};
+        //         dados.data.forEach((video) => {
+        //             if (newPlaylists[video.playlists]) {
+        //                 newPlaylists[video.playlists] = [];
+                        
+
+        //             }
+        //             playlists[video.playlists]?.push(video);
+                    
+        //         })
+        //         setPlaylists(playlists);    
+        //     });
+
+        // },[]);
+
+       
 
     return (
+        
         <>
         
         <div style={{
@@ -24,7 +68,7 @@ function HomePage() {
 
             <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro}/>
             <Header />
-            <Timeline searchValue={valorDoFiltro} playlists={config.playlists}>
+            <Timeline searchValue={valorDoFiltro} selection={config.selection} playlists={playlists}>
                     Conteúdo
                 </Timeline>
         </div>
@@ -52,7 +96,7 @@ background-color: ${({ theme }) => theme.backgroundLevel1};
 img {
     width: 80px;
     height:80px;
-    border-radius: 50%;
+    border-radius: 50%;    
 }
 .user-info {
     /* margin-top: 50px; */
@@ -78,7 +122,7 @@ function Header() {
             <StyledBanner bg={config.bg}/>
             <section className="user-info">
             
-                <img src={`https://github.com/${config.github}.png`}/>
+                <img src={`https://github.com/${config.github}.png`} />
                 <div>
                     <h2>
                         {config.name}
@@ -97,13 +141,14 @@ function Header() {
 
 function Timeline({searchValue, ...propriedades}) {
     const playlistNames = Object.keys(propriedades.playlists);
+    const selectionVideos = Object.keys(propriedades.selection)
     
     return (
         <StyledTimeline>
             {playlistNames.map((playlistName) => {
                 const videos = propriedades.playlists[playlistName];
-                console.log(playlistName);
-                console.log(videos);
+                // console.log(playlistName);
+                // console.log(videos);                
                 return (
                     <section key={playlistName}>
                         <h2>{playlistName}</h2>
@@ -122,11 +167,43 @@ function Timeline({searchValue, ...propriedades}) {
                                         </span>
                                     </a>
                                 )
-                            })}
+                            })}                            
                         </div>
                     </section>
-                )
+                )               
+                  
             })}
+            {selectionVideos.map((selectionVideo) => {
+                    const sel = propriedades.selection[selectionVideo];
+
+                    return (
+                        <section key={selectionVideo}>
+                            <h2>{selectionVideo}</h2>
+                            <div>
+                                {sel.filter((video) => {
+                                    const titleNormalized = video.title.toLowerCase();
+                                    const searchValueNormalized = searchValue.toLowerCase();
+                                    return titleNormalized.includes(searchValueNormalized)                                
+    
+                                }).map((video) => {
+                                    return (
+                                        <a key={video.url} href={video.url}>
+                                            <img src={video.thumb} />
+                                            <span>
+                                                {video.title}
+                                            </span>
+                                        </a>
+                                    )
+                                })}                            
+                            </div>
+                        </section>
+                    )               
+                      
+                })}
+
+
+
+
         </StyledTimeline>
     )
 }
