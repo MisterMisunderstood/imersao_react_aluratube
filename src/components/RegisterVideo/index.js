@@ -83,13 +83,13 @@ export default function RegisterVideo(){
                     <button type="button" className="close-modal" onClick={() => setFormVisivel(false)}>
                         X
                     </button>
-                    <input 
+                    <input required="Coloque um título para o vídeo a ser inserido"
                     placeholder="Título do Vídeo"
                     name="titulo" 
                     value={formCadastro.values.titulo} 
                     onChange={formCadastro.handleChange}
                     />
-                    <input 
+                    <input required="Aqui eu quero uma url do vídeo"
                     placeholder="https://www.youtube.com/..." 
                     name="url"
                     value={formCadastro.values.url} 

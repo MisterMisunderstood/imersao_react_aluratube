@@ -35,7 +35,7 @@ export const StyledTimeline = styled.div`
       grid-auto-flow: column;
       grid-auto-columns: minmax(200px,1fr);
       overflow-x: scroll;
-      scroll-snap-type: proximity;
+      scroll-snap-type: x mandatory;
       ::-webkit-scrollbar {
         height: 8px;
         border-radius: 10px;
