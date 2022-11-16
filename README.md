@@ -14,7 +14,7 @@
 
 # Descrição
 
-Trata-se de um projeto desenvolvido durante uma imersão promovido pela Alura durante 5 dias, seguindo um projeto inicialmente utilizando __figma__ e, posteriormente, com liberdade para alteração da proposta inicial. 
+Trata-se de um projeto desenvolvido durante uma imersão promovido pela Alura durante 5 dias. O [layout](https://www.figma.com/file/1acrju7CLwHkSh6e7xEk9h/Aluratube?node-id=0%3A1&t=haPazKKLgoE4ocU7-0) foi provido pelo _figma_ e, posteriormente, com liberdade para alteração da proposta inicial. 
 
 Neste projeto inicialmente foram utilizados:
 * HTML5
