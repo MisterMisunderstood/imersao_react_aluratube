@@ -28,7 +28,7 @@ Neste projeto inicialmente foram utilizados:
 * Supabase
 * Vercel (para deploy)
 
-O resultado do projeto pode ser visto [clicando aqui](https://imersao-react-aluratube-nine.vercel.app) ou pela minha home do github
+O resultado do projeto pode ser visto [clicando aqui](https://imersao-react-aluratube-nine.vercel.app) ou pela minha home do Github, na área de projetos [clicando aqui](https://github.com/MisterMisunderstood#projetos-e-pr%C3%A1ticas)
 
 ## Requisitos para execução:
 
