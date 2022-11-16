@@ -37,3 +37,9 @@ O resultado do projeto pode ser visto [clicando aqui](https://imersao-react-alur
 * Instalação das blibiotecas via npm (obtido com a instalação do Node.JS);
 ```console
 npm install next react react-dom styled-components
+```
+* Para rodar o projeto:
+```console
+npm run dev
+```
+* Para verificar, no navegador acesse: `http://localhost:3000`
