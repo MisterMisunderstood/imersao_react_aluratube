@@ -25,12 +25,13 @@ export const StyledRegisterVideo = styled.div`
     background-color: transparent;
     border: none;
     cursor: pointer;
+    //botão fechar
   }
   button[type="submit"] {
     background-color: red;
     padding: 8px 16px;
     border: none;
-    border-radius: 2px;
+    border-radius: 20px;
     cursor: pointer;
     color: inherit;
   }
@@ -46,7 +47,7 @@ export const StyledRegisterVideo = styled.div`
     justify-content: center;
     & > div {
       flex: 1;
-      border-radius: 8px;
+      border-radius: 20px;
       max-width: 320px;
       background-color: ${({ theme }) => theme.backgroundLevel2};
       display: flex;
@@ -57,7 +58,7 @@ export const StyledRegisterVideo = styled.div`
     }
   }
   input {
-    border-radius: 2px;
+    border-radius: 20px;
     border: 1px solid ${({ theme }) => theme.borderBase};
     padding: 8px 10px;
     margin-bottom: 10px;
@@ -68,7 +69,7 @@ export const StyledRegisterVideo = styled.div`
     background-color: ${({ theme }) => theme.backgroundBase};
   }
   .box-thumb {
-    border-radius: 2px;    
+    border-radius: 20px;    
     margin-top: 100px;     
     display: flex;
     flex-direction: column;

@@ -12,7 +12,8 @@ const theme = {
         borderBase: "#e5e5e5",
         textColorBase: "#222222",
         textColorFooter: "#686868",
-        iconsColorBase: "#202020"
+        iconsColorBase: "#202020",
+        menuBackground: "rgba(255, 255, 255, 0.5)",
     },
     dark: {
         backgroundBase: "#181818",
@@ -21,7 +22,8 @@ const theme = {
         borderBase: "#383838",
         textColorBase: "#FFFFFF",
         textColorFooter: "#404040",
-        iconsColorBase: "#929292"
+        iconsColorBase: "#929292",
+        menuBackground: "rgba(0, 0, 0, 0.5)",
     }
 };
 

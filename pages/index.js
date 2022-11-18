@@ -109,7 +109,8 @@ const StyledBanner = styled.div`
     /* background-image: url(${config.bg}); */
     height: 280px;    
     background-position-y: 800px;
-
+    //background-attachment: fixed;
+    
 `;
 
 const StyledFooter = styled.div`

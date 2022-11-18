@@ -8,13 +8,14 @@ const StyledMenu = styled.header`
   flex-direction: row;
   height: 56px;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.backgroundLevel1 || "#FFFFFF"};
-  border: 1px solid ${({ theme }) => theme.borderBase || "#e5e5e5"};
+  background-color: ${({ theme }) => theme.menuBackground || "#FFFFFF"};  
+  border-bottom: 0.1px solid ${({ theme }) => theme.borderBase || "#e5e5e5"};
   align-items: center;
   padding: 0 16px;
   gap: 16px;
   position: fixed;
   width: 100%;
+  backdrop-filter: blur(5px) saturate(120%) contrast(200%);
   .logo {
     width: 100%;
     max-width: 80px;
@@ -38,6 +39,8 @@ export default function Menu({valorDoFiltro, setValorDoFiltro }) {
     </StyledMenu>
   );
 }
+
+
 
 function Logo() {
   return (
