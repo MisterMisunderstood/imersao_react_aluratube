@@ -1,5 +1,8 @@
 import React from "react";
+import { icons } from "react-icons";
 import styled from "styled-components"
+import { SlMagnifier } from "react-icons/sl";
+
 
 const StyledSearch = styled.div`
   display: flex;
@@ -32,6 +35,13 @@ const StyledSearch = styled.div`
       height: 40px;
     }
   }
+  a {
+    font-size: 150%;
+    color: ${({ theme }) => theme.iconsColorBase};
+    
+  }
+
+
 `;
 
 // Home       | 
@@ -49,7 +59,7 @@ export default function Search({ valorDoFiltro, setValorDoFiltro }) {
         <StyledSearch>
             <input type="text" onChange={(e) => setValorDaBusca(e.target.value)} value={valorDaBusca} />
             <button>
-                🔎
+                <a><SlMagnifier /></a>
             </button>
         </StyledSearch>
     )

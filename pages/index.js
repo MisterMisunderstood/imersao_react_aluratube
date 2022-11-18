@@ -4,15 +4,19 @@ import styled from "styled-components";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 import { videoService } from "../src/services/videoService";
+import { SlSocialGithub } from "react-icons/sl";
+
+
+
 
 function HomePage() {
     const estiloDaHomePage = { };
     const service = videoService();
-        const [valorDoFiltro, setValorDoFiltro] = React.useState("");
-        const [playlists, setPlaylists] = React.useState({});
+    const [valorDoFiltro, setValorDoFiltro] = React.useState("");
+    const [playlists, setPlaylists] = React.useState({});
         
         React.useEffect(() => {
-            console.log("useEffect");
+            //console.log("useEffect");
             service.getAllVideos()
                 .then((dados) => {
                     console.log(dados.data);
@@ -36,10 +40,8 @@ function HomePage() {
 
        
 
-    return (
-        
-        <>
-        
+    return (        
+        <>        
         <div style={{
                 display: "flex",
                 flexDirection: "column",
@@ -51,9 +53,13 @@ function HomePage() {
             <Header />
             <Timeline searchValue={valorDoFiltro} selection={config.selection} playlists={playlists}>
                     Conteúdo
-                </Timeline>
+            </Timeline>
+            <Footer />
         </div>
+        
         </>
+
+        
         
     );
   }
@@ -77,24 +83,82 @@ img {
     align-items: center;
     width: 100%;
     padding: 16px 32px;
-    gap: 16px;
-    
-}    
+    gap: 16px;    
+}
+p {
+    font-style: italic;
+    color: ${({ theme }) => theme.iconsColorBase};    
+}
+#socialIcon {
+    position: absolute;
+        right: 20px;
+        padding: 10px 32px;
+        font-size: xx-large;        
+        &>a{
+            margin-left: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            color:inherit;            
+            
+        }
+}
+
 `;
 const StyledBanner = styled.div`
     background-image: url(${({ bg }) => bg});
     /* background-image: url(${config.bg}); */
-    height: 230px;    
+    height: 280px;    
     background-position-y: 800px;
 
 `;
+
+const StyledFooter = styled.div`
+background-color: ${({ theme }) => theme.backgroundBase};
+height: 140px;
+align-items: center;
+text-align: center;
+font-size: smaller;
+font-family: sans-serif;
+display: block;
+margin: 0 auto;
+
+
+
+.fontfooter {    
+    color: ${({ theme }) => theme.textColorFooter}; 
+    padding: 5px; 
+    padding-bottom: 20px;    
+      
+    
+}
+
+.fontfooterTitulo {
+    padding-top: 20px;
+    border-top: 0.4px solid ${({ theme }) => theme.textColorFooter};
+    color: ${({ theme }) => theme.textColorFooter}; 
+    
+}
+
+.iconFooter {
+    padding: 10px;
+    font-size: 5em;
+    color: ${({ theme }) => theme.textColorFooter};
+    &>a{
+            margin-left: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            color:inherit;
+    }
+      
+}
+
+`
 
 function Header() {
     return (
         <StyledHeader>
             <StyledBanner bg={config.bg}/>
-            <section className="user-info">
-            
+            <section className="user-info">            
                 <img src={`https://github.com/${config.github}.png`} />
                 <div>
                     <h2>
@@ -103,13 +167,32 @@ function Header() {
                     <p>
                         {config.job}
                     </p>
-                </div>          
-               
+                </div> 
+                <div id="socialIcon">
+                <a href="https://github.com/MisterMisunderstood" target="_blank"><SlSocialGithub /></a>               
+                
+                </div>            
             </section>
                  
         </StyledHeader>
     )
       
+}
+
+ 
+function Footer(){
+    return (
+        <StyledFooter>
+            <section>
+                <p className="fontfooterTitulo">Feito com carinho 💜 por <a href="https://github.com/MisterMisunderstood" target="_blank">Ricardo</a></p>
+                <a className="fontfooter">Imersão Alura 2022</a>  
+                <div className="iconFooter">
+                <a href="https://github.com/MisterMisunderstood" target="_blank"><SlSocialGithub /></a> 
+                </div>           
+            
+            </section>
+        </StyledFooter>
+    )
 }
 
 function Timeline({searchValue, ...propriedades}) {
@@ -174,12 +257,11 @@ function Timeline({searchValue, ...propriedades}) {
                       
                 })}
 
-
-
-
         </StyledTimeline>
-    )
+    )    
 }
+
+
     
  
   
