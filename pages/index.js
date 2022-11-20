@@ -16,7 +16,7 @@ function HomePage() {
     const service = videoService();
     const [valorDoFiltro, setValorDoFiltro] = React.useState("");
     const [playlists, setPlaylists] = React.useState({});
-    const contexto = React.useContext(ColorModeContext);
+    
         
         React.useEffect(() => {
             //console.log("useEffect");
