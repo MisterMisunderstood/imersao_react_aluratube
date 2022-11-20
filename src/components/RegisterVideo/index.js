@@ -57,7 +57,7 @@ export default function RegisterVideo(){
                 ? (
                     <form onSubmit={(evento) => {
                         evento.preventDefault();
-                        console.log(formCadastro.values);
+                        //console.log(formCadastro.values);
                         
                         //contrato entre front e back-end
                         supabase.from("playlstdb").insert({

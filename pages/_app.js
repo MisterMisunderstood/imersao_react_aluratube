@@ -13,7 +13,7 @@ const theme = {
         textColorBase: "#222222",
         textColorFooter: "#686868",
         iconsColorBase: "#202020",
-        menuBackground: "rgba(255, 255, 255, 0.5)",
+        menuBackground: "rgba(255, 255, 255, 0.1)",
     },
     dark: {
         backgroundBase: "#181818",
@@ -42,14 +42,16 @@ function ProviderWrapper(props) {
 function MyApp({ Component, pageProps }) {
     const contexto = React.useContext(ColorModeContext); 
 
-    console.log(contexto.mode);
+    //console.log(contexto.mode);
     
     return (
+        
         <ThemeProvider theme={theme[contexto.mode]}>
             <CSSReset />
             <Component {...pageProps} />
             <RegisterVideo />
         </ThemeProvider>
+        
     )
 }
 

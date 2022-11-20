@@ -1,4 +1,4 @@
-import React from "react"; 
+import React, { useContext } from "react"; 
 import config from "../config.json";
 import styled from "styled-components";
 import Menu from "../src/components/Menu";
@@ -9,17 +9,20 @@ import { SlSocialGithub } from "react-icons/sl";
 
 
 
+
+
 function HomePage() {
     const estiloDaHomePage = { };
     const service = videoService();
     const [valorDoFiltro, setValorDoFiltro] = React.useState("");
     const [playlists, setPlaylists] = React.useState({});
+    const contexto = React.useContext(ColorModeContext);
         
         React.useEffect(() => {
             //console.log("useEffect");
             service.getAllVideos()
                 .then((dados) => {
-                    console.log(dados.data);
+                    //console.log(dados.data);
                     // Forma imutavel
                     const novasPlaylists = {};
                     dados.data.forEach((video) => {
@@ -93,7 +96,8 @@ p {
     position: absolute;
         right: 20px;
         padding: 10px 32px;
-        font-size: xx-large;        
+        font-size: xx-large; 
+        color: ${({ theme }) => theme.textColorFooter};       
         &>a{
             margin-left: 20px;
             cursor: pointer;
@@ -105,7 +109,7 @@ p {
 
 `;
 const StyledBanner = styled.div`
-    background-image: url(${({ bg }) => bg});
+    background-image: url(${({ bg, }) => bg});
     /* background-image: url(${config.bg}); */
     height: 280px;    
     background-position-y: 800px;
@@ -136,8 +140,8 @@ margin: 0 auto;
 .fontfooterTitulo {
     padding-top: 20px;
     border-top: 0.4px solid ${({ theme }) => theme.textColorFooter};
-    color: ${({ theme }) => theme.textColorFooter}; 
-    
+    color: ${({ theme }) => theme.textColorFooter};
+        
 }
 
 .iconFooter {
@@ -151,14 +155,18 @@ margin: 0 auto;
             color:inherit;
     }
       
-}
+}`;
 
-`
+
 
 function Header() {
+    
+    //console.log(ColorModeProvider.mode);
     return (
         <StyledHeader>
-            <StyledBanner bg={config.bg}/>
+            <StyledBanner bg={config.bgdark}/>
+            {/* <StyledBanner bg={`config.bg${contexto.mode}`}/> */}
+            
             <section className="user-info">            
                 <img src={`https://github.com/${config.github}.png`} />
                 <div>
@@ -170,7 +178,7 @@ function Header() {
                     </p>
                 </div> 
                 <div id="socialIcon">
-                <a href="https://github.com/MisterMisunderstood" target="_blank"><SlSocialGithub /></a>               
+                <a href="https://github.com/MisterMisunderstood" target="_blank" alt="Github"><SlSocialGithub /></a>               
                 
                 </div>            
             </section>
