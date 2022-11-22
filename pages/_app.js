@@ -14,6 +14,7 @@ const theme = {
         textColorFooter: "#686868",
         iconsColorBase: "#202020",
         menuBackground: "rgba(255, 255, 255, 0.1)",
+        banner: "https://images.unsplash.com/photo-1485988412941-77a35537dae4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1792&q=80",
     },
     dark: {
         backgroundBase: "#181818",
@@ -24,6 +25,7 @@ const theme = {
         textColorFooter: "#404040",
         iconsColorBase: "#929292",
         menuBackground: "rgba(0, 0, 0, 0.5)",
+        banner: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
     }
 };
 

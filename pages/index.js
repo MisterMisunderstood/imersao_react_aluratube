@@ -109,7 +109,8 @@ p {
 
 `;
 const StyledBanner = styled.div`
-    background-image: url(${({ bg, }) => bg});
+ background-image: url(${({ theme }) => theme.banner});
+    /* background-image: url(${({ bg, }) => bg}); */
     /* background-image: url(${config.bg}); */
     height: 280px;    
     background-position-y: 800px;
@@ -164,7 +165,7 @@ function Header() {
     //console.log(ColorModeProvider.mode);
     return (
         <StyledHeader>
-            <StyledBanner bg={config.bgdark}/>
+            <StyledBanner bg={config.bgdark}/>  
             {/* <StyledBanner bg={`config.bg${contexto.mode}`}/> */}
             
             <section className="user-info">            
