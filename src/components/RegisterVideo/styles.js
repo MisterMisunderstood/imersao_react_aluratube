@@ -25,8 +25,26 @@ export const StyledRegisterVideo = styled.div`
     background-color: transparent;
     border: none;
     cursor: pointer;
+    z-index: 100;
     //botão fechar
   }
+
+  .box-thumb {
+    margin-bottom: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+  }
+
+  .box-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px 20px 0px 0px;
+  }
+
   button[type="submit"] {
     background-color: red;
     padding: 8px 16px;
@@ -38,10 +56,12 @@ export const StyledRegisterVideo = styled.div`
   form {
     width: 100%;
     padding: 5%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     display: flex;
     justify-content: center;
@@ -49,12 +69,13 @@ export const StyledRegisterVideo = styled.div`
       flex: 1;
       border-radius: 20px;
       max-width: 320px;
+      max-height: 400px;
       background-color: ${({ theme }) => theme.backgroundLevel2};
       display: flex;
       flex-direction: column;
       position: relative;
       padding: 16px;
-      padding-top: 40px;
+      padding-top: 200px;
     }
   }
   input {
@@ -67,14 +88,5 @@ export const StyledRegisterVideo = styled.div`
     background-color: #f9f9f9;
     color: ${({ theme }) => theme.textColorBase};
     background-color: ${({ theme }) => theme.backgroundBase};
-  }
-  .box-thumb {
-    border-radius: 20px;    
-    margin-top: 100px;     
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 50px;    
   }
 `;

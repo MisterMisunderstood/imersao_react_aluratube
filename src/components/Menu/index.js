@@ -17,6 +17,7 @@ const StyledMenu = styled.header`
   position: fixed;
   width: 100%;
   backdrop-filter: blur(5px) saturate(120%) contrast(200%);
+  z-index: 199;
   .logo {
     width: 100%;
     max-width: 80px;
