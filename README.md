@@ -43,3 +43,22 @@ npm install next react react-dom styled-components
 npm run dev
 ```
 * Para verificar, no navegador acesse: `http://localhost:3000`
+
+# Screenshots
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/83375136/203199233-dd3f7a6e-4fd6-45c7-945c-740a208072b3.png" width="960px" />
+</div>
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/83375136/203199381-0ccd468e-8eb9-4729-ae37-7947d8dae19a.png" width="960px" />
+</div>
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/83375136/203199473-6c542a4f-d179-492d-9e97-5bfdaf80f4cf.png" width="960px" />
+</div>
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/83375136/203199599-6c45b343-e28e-4d4e-9444-d9bcb2398ca0.png" width="960px" />
+</div>
+
