@@ -76,6 +76,7 @@ export const StyledRegisterVideo = styled.div`
       position: relative;
       padding: 16px;
       padding-top: 200px;
+      transition: .4s;
     }
   }
   input {
@@ -88,5 +89,7 @@ export const StyledRegisterVideo = styled.div`
     background-color: #f9f9f9;
     color: ${({ theme }) => theme.textColorBase};
     background-color: ${({ theme }) => theme.backgroundBase};
-  }
+  } 
+
+  
 `;

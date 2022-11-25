@@ -94,21 +94,26 @@ export default function RegisterVideo() {
               />
             </div>
             <input
-              required="Coloque um título para o vídeo a ser inserido"
+              required
+              minLength={6}
               placeholder="Título do Vídeo"
               name="titulo"
               value={formCadastro.values.titulo}
-              onChange={formCadastro.handleChange}
+              onChange={formCadastro.handleChange}              
+              
             />
-            <input
-              required="Aqui eu quero uma url do vídeo"
+            <input              
               placeholder="https://www.youtube.com/..."
               name="url"
               value={formCadastro.values.url}
               onChange={formCadastro.handleChange}
+              required 
+              minLength={34}
+              pattern="((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-_]{11})(\S+)?"
             />
             <input
-              required="Digite um nome para playlist ou selecione uma existente"
+              required 
+              minLength={6}
               placeholder="Playlist"
               name="playlist"
               value={formCadastro.values.playlist}
@@ -119,7 +124,7 @@ export default function RegisterVideo() {
           </div>
         </form>
       ) : (
-        true
+        false
       )}
       {/* //forma abaixo tb funciona, op lógico */}
       {/* {formVisivel && (
