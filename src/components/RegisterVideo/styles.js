@@ -4,7 +4,8 @@ export const StyledRegisterVideo = styled.div`
   .add-video {
     width: 50px;
     height: 50px;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 0.8em;
     color: inherit;
     position: fixed;
     bottom: 16px;
@@ -16,14 +17,17 @@ export const StyledRegisterVideo = styled.div`
     cursor: pointer;
   }
   .close-modal {
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
     position: absolute;
+    font-size: 1.5em;
+    text-shadow: 5px 5px 2px black;
     top: 8px;
     right: 16px;
     color: inherit;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, .5);
     border: none;
+    border-radius: 50%;
     cursor: pointer;
     z-index: 100;
     //botão fechar
@@ -56,7 +60,7 @@ export const StyledRegisterVideo = styled.div`
   form {
     width: 100%;
     padding: 5%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, .7);
     position: fixed;
     top: 0;
     bottom: 0;

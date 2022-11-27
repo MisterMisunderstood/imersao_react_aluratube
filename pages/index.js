@@ -1,10 +1,11 @@
-import React, { useContext } from "react"; 
+import React, { useContext, useState } from "react"; 
 import config from "../config.json";
 import styled from "styled-components";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 import { videoService } from "../src/services/videoService";
-import { SlSocialGithub } from "react-icons/sl";
+import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
+import RegisterVideo from "../src/components/RegisterVideo";
 
 
 
@@ -19,7 +20,7 @@ function HomePage() {
     
         
         React.useEffect(() => {
-            //console.log("useEffect");
+            console.log("useEffect");
             service.getAllVideos()
                 .then((dados) => {
                     //console.log(dados.data);
@@ -29,11 +30,11 @@ function HomePage() {
                         if (!novasPlaylists[video.playlist]) {
                             novasPlaylists[video.playlist] = [];
                         } 
-                        // novasPlaylists[video.playlist].push(video);
-                        novasPlaylists[video.playlist] = [
-                            video,
-                            ...novasPlaylists[video.playlist],
-                        ];
+                        novasPlaylists[video.playlist].push(video);
+                        // novasPlaylists[video.playlist] = [
+                        //     video,
+                        //     ...novasPlaylists[video.playlist],
+                        // ];
                     });
     
                     setPlaylists(novasPlaylists);
@@ -57,6 +58,7 @@ function HomePage() {
             <Timeline searchValue={valorDoFiltro} selection={config.selection} playlists={playlists}>
                     Conteúdo
             </Timeline>
+            <RegisterVideo />
             <Footer />
         </div>
         
@@ -180,7 +182,8 @@ function Header() {
                     </p>
                 </div> 
                 <div id="socialIcon">
-                <a href="https://github.com/MisterMisunderstood" target="_blank" alt="Github"><SlSocialGithub /></a>               
+                <a href="https://github.com/MisterMisunderstood" target="_blank" alt="Github"><SlSocialGithub /></a>
+                <a href="https://www.linkedin.com/in/ricardo-couto-ferreira-perfil/" target="_blank" alt="Linkedin>"><SlSocialLinkedin/></a>             
                 
                 </div>            
             </section>

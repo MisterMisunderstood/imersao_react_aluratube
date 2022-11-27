@@ -1,6 +1,7 @@
 import { StyledRegisterVideo } from "./styles";
 import React from "react";
 import { createClient } from "@supabase/supabase-js";
+import { SlClose } from "react-icons/sl";
 
 //custom hook
 function useForm(propsDoForm) {
@@ -57,6 +58,7 @@ export default function RegisterVideo() {
           onSubmit={(evento) => {
             evento.preventDefault();
             //console.log(formCadastro.values);
+            // console.log(evento);
 
             //contrato entre front e back-end
             supabase
@@ -85,7 +87,7 @@ export default function RegisterVideo() {
               className="close-modal"
               onClick={() => setFormVisivel(false)}
             >
-              X
+              <SlClose />
             </button>
             <div class="box-thumb">
               <img
@@ -119,7 +121,6 @@ export default function RegisterVideo() {
               value={formCadastro.values.playlist}
               onChange={formCadastro.handleChange}
             />
-
             <button type="submit">Cadastrar</button>
           </div>
         </form>
