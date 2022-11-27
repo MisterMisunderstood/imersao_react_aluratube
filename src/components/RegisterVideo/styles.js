@@ -14,7 +14,13 @@ export const StyledRegisterVideo = styled.div`
     background-color: red;
     border-radius: 50%;
     z-index: 99;
-    cursor: pointer;
+    cursor: pointer;    
+    transition: 1s;
+    
+  }
+  .add-video:hover{
+    background-color: rgb(255, 0, 200);   
+    
   }
   .close-modal {
     width: 24px;
@@ -25,7 +31,7 @@ export const StyledRegisterVideo = styled.div`
     top: 8px;
     right: 16px;
     color: inherit;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: ${({ theme }) => theme.backgroundLevel1};
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -94,6 +100,6 @@ export const StyledRegisterVideo = styled.div`
     color: ${({ theme }) => theme.textColorBase};
     background-color: ${({ theme }) => theme.backgroundBase};
   } 
-
+  
   
 `;

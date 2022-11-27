@@ -20,7 +20,7 @@ function HomePage() {
     
         
         React.useEffect(() => {
-            console.log("useEffect");
+            // console.log("useEffect");
             service.getAllVideos()
                 .then((dados) => {
                     //console.log(dados.data);
