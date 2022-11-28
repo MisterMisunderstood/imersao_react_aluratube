@@ -10,7 +10,7 @@
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-181818?style=for-the-badge&logo=supabase&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F2331E?style=for-the-badge&logo=figma&logoColor=white)
-![VSCode](https://img.shields.io/badge/VSCode-050038?style=for-the-badge&logo=vscode&logoColor=white)
+![VSCode](https://img.shields.io/badge/VSCode-050038?style=for-the-badge&logo=visualstudiocode&logoColor=white)
 
 # Descrição
 
