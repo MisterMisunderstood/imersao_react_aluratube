@@ -29,7 +29,7 @@ export const StyledRegisterVideo = styled.div`
     font-size: 1.5em;
     text-shadow: 5px 5px 2px black;
     top: 8px;
-    right: 16px;
+    right: 10px;
     color: inherit;
     background-color: ${({ theme }) => theme.backgroundLevel1};
     border: none;
@@ -72,7 +72,7 @@ export const StyledRegisterVideo = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 200;
     display: flex;
     justify-content: center;
     & > div {
