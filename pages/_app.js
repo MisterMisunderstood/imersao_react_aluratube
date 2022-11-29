@@ -14,7 +14,7 @@ const theme = {
         textColorFooter: "#686868",
         iconsColorBase: "#202020",
         menuBackground: "rgba(255, 255, 255, 0.1)",
-        banner: "https://images.unsplash.com/photo-1536501483244-925da0b87089?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80",
+        banner: "https://images.unsplash.com/photo-1511634829096-045a111727eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1634&q=80",
     },
     dark: {
         backgroundBase: "#181818",
