@@ -20,6 +20,7 @@ const StyledSearch = styled.div`
     outline: none;
     color: ${({ theme }) => theme.textColorBase};
     background-color: ${({ theme }) => theme.backgroundBase};
+    text-indent: 15px;
   }
   button {
     flex: 1;
