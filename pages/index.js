@@ -114,9 +114,11 @@ const StyledBanner = styled.div`
  background-image: url(${({ theme }) => theme.banner});
     /* background-image: url(${({ bg, }) => bg}); */
     /* background-image: url(${config.bg}); */
-    height: 280px;    
+    height: 280px;
+    background-position: center;    
     background-position-y: 700px;    
     transition: .1s;
+    
     //background-attachment: fixed; //efeito parallax simples ;)
     
 `;
